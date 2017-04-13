@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CashFlower.Contracts", "Cas
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CashFlower.Contracts.Tests", "CashFlower.Contracts.Tests\CashFlower.Contracts.Tests.csproj", "{70CBCBBA-CC13-460B-B04D-907BD9B4FDB2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CashFlower.BankTransferReader.AbnAmro.Tab", "CashFlower.BankTransferReader.AbnAmro.Tab\CashFlower.BankTransferReader.AbnAmro.Tab.csproj", "{B9DB290F-DC62-4625-81F9-B3999ED2B7CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CashFlower.BankTransferReader.AbnAmro.Tab.Tests", "CashFlower.BankTransferReader.AbnAmro.Tab.Tests\CashFlower.BankTransferReader.AbnAmro.Tab.Tests.csproj", "{161F4466-B98B-40D7-9B01-FF708300BA71}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +35,14 @@ Global
 		{70CBCBBA-CC13-460B-B04D-907BD9B4FDB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{70CBCBBA-CC13-460B-B04D-907BD9B4FDB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{70CBCBBA-CC13-460B-B04D-907BD9B4FDB2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9DB290F-DC62-4625-81F9-B3999ED2B7CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9DB290F-DC62-4625-81F9-B3999ED2B7CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9DB290F-DC62-4625-81F9-B3999ED2B7CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9DB290F-DC62-4625-81F9-B3999ED2B7CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{161F4466-B98B-40D7-9B01-FF708300BA71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{161F4466-B98B-40D7-9B01-FF708300BA71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{161F4466-B98B-40D7-9B01-FF708300BA71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{161F4466-B98B-40D7-9B01-FF708300BA71}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
