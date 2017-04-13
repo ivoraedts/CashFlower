@@ -10,11 +10,13 @@ namespace CashFlower.Importer
     {
         private readonly IBankTransferReader _reader;
         private readonly IExistingBankTransferDeterminator _matcher;
+        private readonly IStoreBankTransfers _store;
 
-        public BankTransferImporter(IBankTransferReader reader, IExistingBankTransferDeterminator matcher)
+        public BankTransferImporter(IBankTransferReader reader, IExistingBankTransferDeterminator matcher, IStoreBankTransfers store)
         {
             _reader = reader;
             _matcher = matcher;
+            _store = store;
         }
 
         public void Execute()
@@ -24,7 +26,7 @@ namespace CashFlower.Importer
             {
                 if (!_matcher.Exists(bankTransferLine))
                 {
-                    
+                    _store.Store(bankTransferLine);
                 };
             }
         }

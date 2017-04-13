@@ -43,6 +43,7 @@
     <Compile Include="BankTransferLine.cs" />
     <Compile Include="IBankTransferReader.cs" />
     <Compile Include="IExistingBankTransferDeterminator.cs" />
+    <Compile Include="IStoreBankTransfers.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -45,7 +45,10 @@
     <Compile Include="Stubs\IBankTransferReader\ReaderThatReturnsEmptyList.cs" />
     <Compile Include="Stubs\IBankTransferReader\ReaderThatReturnsPreSetList.cs" />
     <Compile Include="Stubs\IExistingBankTransferDeterminator\BankTransferMatcherIndicatingAllTransfersAlreadyExist.cs" />
+    <Compile Include="Stubs\IExistingBankTransferDeterminator\BankTransferMatcherIndicatingNoTransfersAlreadyExists.cs" />
     <Compile Include="Stubs\IExistingBankTransferDeterminator\BankTransferMatcherThatCrashes.cs" />
+    <Compile Include="Stubs\IStoreBankTransfers\BankTransfersStorerThatCrashes.cs" />
+    <Compile Include="Stubs\IStoreBankTransfers\BankTransferStoreSpy.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CashFlower.Contracts\CashFlower.Contracts.csproj">
