@@ -13,6 +13,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CashFlower.BankTransferRead
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CashFlower.BankTransferReader.AbnAmro.Tab.Tests", "CashFlower.BankTransferReader.AbnAmro.Tab.Tests\CashFlower.BankTransferReader.AbnAmro.Tab.Tests.csproj", "{161F4466-B98B-40D7-9B01-FF708300BA71}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CashFlower.Framework", "CashFlower.Framework\CashFlower.Framework.csproj", "{B63E3103-0536-493C-962F-18DD98B6158E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CashFlower.Framework.Tests", "CashFlower.Framework.Tests\CashFlower.Framework.Tests.csproj", "{7C586797-2DDA-4470-9F01-E8F3B7349C51}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CashFlower.Test.Shared", "CashFlower.Test.Shared\CashFlower.Test.Shared.csproj", "{A1420FDC-47C6-41C7-9B70-DE08B4717A41}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,6 +49,18 @@ Global
 		{161F4466-B98B-40D7-9B01-FF708300BA71}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{161F4466-B98B-40D7-9B01-FF708300BA71}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{161F4466-B98B-40D7-9B01-FF708300BA71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B63E3103-0536-493C-962F-18DD98B6158E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B63E3103-0536-493C-962F-18DD98B6158E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B63E3103-0536-493C-962F-18DD98B6158E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B63E3103-0536-493C-962F-18DD98B6158E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C586797-2DDA-4470-9F01-E8F3B7349C51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C586797-2DDA-4470-9F01-E8F3B7349C51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C586797-2DDA-4470-9F01-E8F3B7349C51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C586797-2DDA-4470-9F01-E8F3B7349C51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1420FDC-47C6-41C7-9B70-DE08B4717A41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1420FDC-47C6-41C7-9B70-DE08B4717A41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1420FDC-47C6-41C7-9B70-DE08B4717A41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1420FDC-47C6-41C7-9B70-DE08B4717A41}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

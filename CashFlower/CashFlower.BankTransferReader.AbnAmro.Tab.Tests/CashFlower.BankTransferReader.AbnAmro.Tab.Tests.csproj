@@ -47,7 +47,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tests\AbnAmroTabReaderTests.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Recources\ExampleLine_BoughtStuffAtSupermarket.TAB">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CashFlower.BankTransferReader.AbnAmro.Tab\CashFlower.BankTransferReader.AbnAmro.Tab.csproj">
       <Project>{B9DB290F-DC62-4625-81F9-B3999ED2B7CC}</Project>
@@ -57,9 +61,61 @@
       <Project>{D9525F84-B6D9-4F56-B64F-22EC1FF5C6B7}</Project>
       <Name>CashFlower.Contracts</Name>
     </ProjectReference>
+    <ProjectReference Include="..\CashFlower.Framework.Tests\CashFlower.Framework.Tests.csproj">
+      <Project>{7C586797-2DDA-4470-9F01-E8F3B7349C51}</Project>
+      <Name>CashFlower.Framework.Tests</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CashFlower.Framework\CashFlower.Framework.csproj">
+      <Project>{B63E3103-0536-493C-962F-18DD98B6158E}</Project>
+      <Name>CashFlower.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CashFlower.Test.Shared\CashFlower.Test.Shared.csproj">
+      <Project>{A1420FDC-47C6-41C7-9B70-DE08B4717A41}</Project>
+      <Name>CashFlower.Test.Shared</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Recources\EmptyFile.tab">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Recources\ExampleLine_WrongNumberOfTabs.TAB">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Recources\ExampleLine_CashWithdrawal.TAB">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Recources\ExampleLine_InvalidAmount.TAB">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Recources\ExampleLine_InvalidFinalBalance.TAB">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Recources\ExampleLine_InvalidInitialBalance.TAB">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Recources\ExampleLine_InvalidInterestDate.TAB">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Recources\ExampleLine_InvalidTransactionDate.TAB">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Recources\ExampleLine_MonthlyBillForMobile.TAB">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Recources\ExampleLine_PayedMoneyToJohnDoe.TAB">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Recources\ExampleLine_ReceivedMoneyFromJohnDoe.TAB">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Recources\ExampleLine_ReceivedSalary.TAB">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Recources\ExampleLine_WrongCurrency.TAB">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
