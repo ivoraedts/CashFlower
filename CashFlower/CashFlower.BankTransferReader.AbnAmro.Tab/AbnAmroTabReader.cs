@@ -31,7 +31,6 @@ namespace CashFlower.BankTransferReader.AbnAmro.Tab
                 while ((line = file.ReadLine()) != null)
                 {
                     result.Add(_parseLine(line));
-                    throw new NotImplementedException();
                 }
             }
             return result;
@@ -42,16 +41,66 @@ namespace CashFlower.BankTransferReader.AbnAmro.Tab
             var parts = line.Split(_tabDelimiter, StringSplitOptions.None);
             _validateNumberOfParts(line, parts);
             _validateCurrency(parts[1]);
+            var transactionDate = _retrieveTransactionDate(parts[2]);
+            var contraAccountDetails = _getContraAccountDetails(parts[7]);
 
             return 
                 new BankTransferLine {
                     AccountNumber = parts[0],
-                    TransactionDate = _retrieveTransactionDate(parts[2]),
+                    TransactionDate = contraAccountDetails.DateTimeStamp ?? transactionDate,
                     InitialBalance = _retrieveInitialBalance(parts[3]),
                     FinalBalance = _retrieveFinalBalance(parts[4]),
                     InterestDate=_retrieveInterestDate(parts[5]),
-                    Amount = _retrieveAmount(parts[6])
+                    Amount = _retrieveAmount(parts[6]),
+                    ContraAccountDescription = contraAccountDetails.ContraAccountName
+                    
                 };
+        }
+
+        private class ContraAccountDetails
+        {
+            public DateTime? DateTimeStamp { get; set; }
+            public string ContraAccountName { get; set; }
+        }
+
+        private ContraAccountDetails _getContraAccountDetails(string contraAccountDetails)
+        {
+            if (contraAccountDetails.StartsWith("BEA   NR:"))
+                return _getDetailsFromPointOfSaleTerminalDetails(contraAccountDetails);
+            throw new NotImplementedException();
+        }
+
+        private static ContraAccountDetails _getDetailsFromPointOfSaleTerminalDetails(string contraAccountDetails)
+        {
+            if (contraAccountDetails.Length<33)
+                throw new CashFlowerException("CFE_ABN_008", 
+                    "Fewer characters ({0}) than excpected (33) in Point of Sale Terminal Details: '{1}'"
+                    , contraAccountDetails.Length, contraAccountDetails);
+                
+            return new ContraAccountDetails {
+                DateTimeStamp = _parsePointOfSaleTerminalDetailsTimeStamp(contraAccountDetails.Substring(18, 14)),
+                ContraAccountName = _stripCardnumberIfSpecified(contraAccountDetails.Substring(33))
+            };
+        }
+
+        private static string _stripCardnumberIfSpecified(string contraAccountName)
+        {
+            return contraAccountName.IndexOf(",PAS", StringComparison.InvariantCulture) == -1 ? 
+            contraAccountName : 
+            contraAccountName.Substring(0, contraAccountName.IndexOf(",PAS", StringComparison.InvariantCulture));
+        }
+
+        private static DateTime _parsePointOfSaleTerminalDetailsTimeStamp(string contraAccountDetailsTimeStamp)
+        {
+            DateTime myDate;
+            if (_tryParsePointOfSaleTerminalDetailsTimeStamp(contraAccountDetailsTimeStamp, out myDate))
+                return myDate;
+            throw new CashFlowerException("CFE_ABN_009", "No Valid contraAccountDetailsTimeStamp ({0}) given.", contraAccountDetailsTimeStamp);
+        }
+
+        private static bool _tryParsePointOfSaleTerminalDetailsTimeStamp(string contraAccountDetailsTimeStamp, out DateTime myDate)
+        {
+            return DateTime.TryParseExact(contraAccountDetailsTimeStamp, @"dd.MM.yy/HH.mm", CultureInfo.InvariantCulture, DateTimeStyles.None, out myDate);
         }
 
         private decimal _retrieveAmount(string amount)
