@@ -9,7 +9,6 @@ namespace CashFlower.BankTransferReader.AbnAmro.Tab
     {
         private readonly string _fullFilename ;
 
-
         public AbnAmroTabReader(string fullFilename)
         {
             _fullFilename = fullFilename;
@@ -26,7 +25,7 @@ namespace CashFlower.BankTransferReader.AbnAmro.Tab
                 string line;
                 while ((line = file.ReadLine()) != null)
                 {
-                    result.Add(new BankTransferLineParser().Execute(line));
+                    result.Add(BankTransferLineParser.Execute(line));
                 }
             }
             return result;

@@ -42,6 +42,8 @@
   <ItemGroup>
     <Compile Include="AbnAmroTabReader.cs" />
     <Compile Include="AbnAmroTabReaderHelpers\BankTransferLineParser.cs" />
+    <Compile Include="AbnAmroTabReaderHelpers\ContraAccountDetails.cs" />
+    <Compile Include="AbnAmroTabReaderHelpers\ContraAcountDetailsExtracter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
