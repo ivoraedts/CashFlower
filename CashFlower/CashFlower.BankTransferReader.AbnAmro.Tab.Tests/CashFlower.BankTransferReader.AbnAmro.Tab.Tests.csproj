@@ -82,27 +82,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Recources\ExampleLine_WrongNumberOfTabs.TAB">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Recources\ExampleLine_CashWithdrawal.TAB">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Recources\ExampleLine_InvalidAmount.TAB">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Recources\ExampleLine_InvalidFinalBalance.TAB">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Recources\ExampleLine_InvalidInitialBalance.TAB">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Recources\ExampleLine_InvalidInterestDate.TAB">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Recources\ExampleLine_InvalidTransactionDate.TAB">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Recources\ExampleLine_MonthlyBillForMobile.TAB">
@@ -115,22 +95,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Recources\ExampleLine_ReceivedSalary.TAB">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Recources\ExampleLine_WrongCurrency.TAB">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Recources\ExampleLine_PointOfSaleTerminalDetailsWithInvalidDate.TAB">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Recources\ExampleLine_PointOfSaleTerminalDetailsWithoutEnoughCharacters.TAB">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Recources\ExampleLine_PointOfSaleTerminalDetailsWithJustEnoughCharacters.TAB">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
