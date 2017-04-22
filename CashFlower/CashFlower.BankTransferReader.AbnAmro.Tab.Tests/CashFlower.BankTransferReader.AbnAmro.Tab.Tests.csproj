@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tests\AbnAmroTabReaderHelpers\BankTransferLineParserTests.cs" />
+    <Compile Include="Tests\AbnAmroTabReaderHelpers\ContraAcountDetailsExtracterHelpers\CashWithdrawalDetailsExtracterTests.cs" />
     <Compile Include="Tests\AbnAmroTabReaderHelpers\ContraAcountDetailsExtracterHelpers\PointOfSaleTerminalDetailsExtracterTests.cs" />
     <Compile Include="Tests\AbnAmroTabReaderHelpers\ContraAcountDetailsExtracterTests.cs" />
     <Compile Include="Tests\AbnAmroTabReaderTests.cs" />

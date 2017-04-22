@@ -3,13 +3,13 @@ using CashFlower.Framework;
 
 namespace CashFlower.BankTransferReader.AbnAmro.Tab.AbnAmroTabReaderHelpers.ContraAcountDetailsExtracterHelpers
 {
-    public static class PointOfSaleTerminalDetailsExtracter
+    public static class CashWithdrawalDetailsExtracter
     {
         public static ContraAccountDetails Execute(string contraAccountDetails)
         {
             if (contraAccountDetails.Length < 33)
-                throw new CashFlowerException("CFE_ABN_008",
-                    "Fewer characters ({0}) than excpected (33) in Point of Sale Terminal Details: '{1}'"
+                throw new CashFlowerException("CFE_ABN_010",
+                    "Fewer characters ({0}) than excpected (33) in Cash Withdrawal Details: '{1}'"
                     , contraAccountDetails.Length, contraAccountDetails);
 
             return new ContraAccountDetails
@@ -24,7 +24,7 @@ namespace CashFlower.BankTransferReader.AbnAmro.Tab.AbnAmroTabReaderHelpers.Cont
             DateTime myDate;
             if (ContraAcountDetailsTimeStampExtracter.TryExecute(contraAccountDetailsTimeStamp, out myDate))
                 return myDate;
-            throw new CashFlowerException("CFE_ABN_009", "No Valid contraAccountDetailsTimeStamp ({0}) given.", contraAccountDetailsTimeStamp);
+            throw new CashFlowerException("CFE_ABN_011", "No Valid contraAccountDetailsTimeStamp ({0}) given.", contraAccountDetailsTimeStamp);
         }
     }
 }

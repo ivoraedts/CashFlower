@@ -44,6 +44,9 @@
     <Compile Include="AbnAmroTabReaderHelpers\BankTransferLineParser.cs" />
     <Compile Include="AbnAmroTabReaderHelpers\ContraAccountDetails.cs" />
     <Compile Include="AbnAmroTabReaderHelpers\ContraAcountDetailsExtracter.cs" />
+    <Compile Include="AbnAmroTabReaderHelpers\ContraAcountDetailsExtracterHelpers\CashWithdrawalDetailsExtracter.cs" />
+    <Compile Include="AbnAmroTabReaderHelpers\ContraAcountDetailsExtracterHelpers\ContraAccountNameHelper.cs" />
+    <Compile Include="AbnAmroTabReaderHelpers\ContraAcountDetailsExtracterHelpers\ContraAcountDetailsTimeStampExtracter.cs" />
     <Compile Include="AbnAmroTabReaderHelpers\ContraAcountDetailsExtracterHelpers\PointOfSaleTerminalDetailsExtracter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
