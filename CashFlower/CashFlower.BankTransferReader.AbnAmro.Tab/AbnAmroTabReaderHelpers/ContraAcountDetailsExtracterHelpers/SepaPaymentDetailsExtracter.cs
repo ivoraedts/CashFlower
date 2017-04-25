@@ -1,5 +1,6 @@
-﻿using System;
-using CashFlower.BankTransferReader.AbnAmro.Tab.AbnAmroTabReaderHelpers.ContraAcountDetailsExtracterHelpers.SepaPaymentDetailsExtracterHelpers;
+﻿using
+    CashFlower.BankTransferReader.AbnAmro.Tab.AbnAmroTabReaderHelpers.ContraAcountDetailsExtracterHelpers.
+        SepaPaymentDetailsExtracterHelpers;
 using CashFlower.Framework;
 
 namespace CashFlower.BankTransferReader.AbnAmro.Tab.AbnAmroTabReaderHelpers.ContraAcountDetailsExtracterHelpers
@@ -11,13 +12,15 @@ namespace CashFlower.BankTransferReader.AbnAmro.Tab.AbnAmroTabReaderHelpers.Cont
             var sepaPaymentDetails = KeyValuePairExtracter.Execute(sepaPaymentDetailsString);
 
             if (!sepaPaymentDetails.ContainsKey("Naam") && (!sepaPaymentDetails.ContainsKey("IBAN")))
+            {
                 throw new CashFlowerException(
                     "CFE_ABN_012", "SEPA payment details does not contain name and IBAN. " +
                                    "Given sepa details : '{0}'", sepaPaymentDetails);
+            }
 
             return new ContraAccountDetails {
-ContraAccountName                = sepaPaymentDetails.GetValueOrNull("Naam"),
-ContraAccountIban = sepaPaymentDetails.GetValueOrNull("IBAN")
+                ContraAccountName = sepaPaymentDetails.GetValueOrNull("Naam"),
+                ContraAccountIban = sepaPaymentDetails.GetValueOrNull("IBAN")
             };
         }
     }

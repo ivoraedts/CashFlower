@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using CashFlower.BankTransferReader.AbnAmro.Tab.AbnAmroTabReaderHelpers;
 using CashFlower.BankTransferReader.AbnAmro.Tab.AbnAmroTabReaderHelpers.ContraAcountDetailsExtracterHelpers.SepaPaymentDetailsExtracterHelpers;
 using CashFlower.Test.Shared;
 using NUnit.Framework;
@@ -58,6 +59,15 @@ namespace CashFlower.BankTransferReader.AbnAmro.Tab.Tests.Tests.AbnAmroTabReader
         public void GivenGetValueThatIsNotInDictionary_ReturnsNull()
         {
             Assert.IsNull(new Dictionary<string, string>().GetValueOrNull("I Don't exist"));
+        }
+
+        [Test]
+        public void GivenSepaRecordWithDoubleKey_DoubleKeyIsMerged()
+        {
+            var result = KeyValuePairExtracter.Execute(
+                    "//SEPA Incasso algemeen doorlopend Incassant: NL55ZZZ111111123456  Naam: De Nederlanden van Nu      Machtiging: 654321607122015123456789                             Omschrijving: Kenmerk: 3125.9993.3199.3338 Omschrijving: POLIS D D 13-07-16 NOTA 012345674 POLISNR NVN54321 Wa/Beperkt Casco ");
+            Assert.IsTrue(result.ContainsKey("Omschrijving"));
+            Assert.IsTrue(result["Omschrijving"].Contains("POLIS D D 13-07-16"));
         }
     }
 }

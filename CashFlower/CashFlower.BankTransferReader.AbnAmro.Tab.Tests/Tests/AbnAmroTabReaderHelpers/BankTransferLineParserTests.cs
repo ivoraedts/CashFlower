@@ -1,5 +1,4 @@
 ﻿using System;
-using System.IO;
 using CashFlower.BankTransferReader.AbnAmro.Tab.AbnAmroTabReaderHelpers;
 using CashFlower.Test.Shared;
 using NUnit.Framework;

@@ -50,6 +50,8 @@
     <Compile Include="Tests\AbnAmroTabReaderHelpers\ContraAcountDetailsExtracterHelpers\PointOfSaleTerminalDetailsExtracterTests.cs" />
     <Compile Include="Tests\AbnAmroTabReaderHelpers\ContraAcountDetailsExtracterHelpers\SepaPaymentDetailsExtracterHelpers\KeyValuePairExtracterTests.cs" />
     <Compile Include="Tests\AbnAmroTabReaderHelpers\ContraAcountDetailsExtracterHelpers\SepaPaymentDetailsExtracterTests.cs" />
+    <Compile Include="Tests\AbnAmroTabReaderHelpers\ContraAcountDetailsExtracterHelpers\TrtpPaymentDetailsExtracterHelpers\TrtpKeyValuePairExtracterTests.cs" />
+    <Compile Include="Tests\AbnAmroTabReaderHelpers\ContraAcountDetailsExtracterHelpers\TrtpPaymentDetailsExtracterTests.cs" />
     <Compile Include="Tests\AbnAmroTabReaderHelpers\ContraAcountDetailsExtracterTests.cs" />
     <Compile Include="Tests\AbnAmroTabReaderTests.cs" />
   </ItemGroup>
