@@ -48,6 +48,8 @@
     <Compile Include="AbnAmroTabReaderHelpers\ContraAcountDetailsExtracterHelpers\ContraAccountNameHelper.cs" />
     <Compile Include="AbnAmroTabReaderHelpers\ContraAcountDetailsExtracterHelpers\ContraAcountDetailsTimeStampExtracter.cs" />
     <Compile Include="AbnAmroTabReaderHelpers\ContraAcountDetailsExtracterHelpers\PointOfSaleTerminalDetailsExtracter.cs" />
+    <Compile Include="AbnAmroTabReaderHelpers\ContraAcountDetailsExtracterHelpers\SepaPaymentDetailsExtracter.cs" />
+    <Compile Include="AbnAmroTabReaderHelpers\ContraAcountDetailsExtracterHelpers\SepaPaymentDetailsExtracterHelpers\KeyValuePairExtracter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -6,5 +6,6 @@ namespace CashFlower.BankTransferReader.AbnAmro.Tab.AbnAmroTabReaderHelpers
     {
         public DateTime? DateTimeStamp { get; set; }
         public string ContraAccountName { get; set; }
+        public string ContraAccountIban { get; set; }
     }
 }

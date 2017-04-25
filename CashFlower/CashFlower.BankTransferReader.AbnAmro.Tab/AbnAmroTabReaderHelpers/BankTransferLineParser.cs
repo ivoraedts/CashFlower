@@ -28,8 +28,8 @@ namespace CashFlower.BankTransferReader.AbnAmro.Tab.AbnAmroTabReaderHelpers
                     FinalBalance = _retrieveFinalBalance(parts[4]),
                     InterestDate = _retrieveInterestDate(parts[5]),
                     Amount = _retrieveAmount(parts[6]),
-                    ContraAccountDescription = contraAccountDetails.ContraAccountName
-
+                    ContraAccountDescription = contraAccountDetails.ContraAccountName,
+                    ContraAccountIban = contraAccountDetails.ContraAccountIban
                 };
         }
 

@@ -37,5 +37,13 @@ namespace CashFlower.BankTransferReader.AbnAmro.Tab.Tests.Tests.AbnAmroTabReader
             Assert.AreEqual(new DateTime(2016, 3, 7, 18, 29, 0), result.DateTimeStamp);
             Assert.AreEqual("", result.ContraAccountName);
         }
+
+        [Test]
+        [ExpectedCashFlowerException("CFE_ABN_012")]
+        public void GivenContraAccountDetailsWithOfSepaType_WithoutNameAndIban_ThrowsException()
+        {
+            ContraAcountDetailsExtracter.Execute(
+                "SEPA Incasso algemeen doorlopend Incassant: NL18ZZZ15438675834700  Machtiging: 0002222222243        Omschrijving: 222222222222/KLANT  222222222 KNMRK 222222222/FACT 222222222222 DAT. 14102016/Termijn 33,00 BTW 15,10");
+        }
     }
 }
