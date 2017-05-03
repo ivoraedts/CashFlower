@@ -1,6 +1,8 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26403.7
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CashFlower.Importer", "CashFlower.Importer\CashFlower.Importer.csproj", "{B0415D50-8ACA-4FFC-86CB-C948E8302A3B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CashFlower.Importer.Test", "CashFlower.Importer.Test\CashFlower.Importer.Test.csproj", "{F00EFA02-4592-45E6-8755-13C743B309BF}"
@@ -22,6 +24,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CashFlower.BankTransferStorage.File.Test", "CashFlower.BankTransferStorage.File.Test\CashFlower.BankTransferStorage.File.Test.csproj", "{0058277C-CAFD-45B2-BAAD-5FFB881F6233}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CashFlower.BankTransferStorage.File", "CashFlower.BankTransferStorage.File\CashFlower.BankTransferStorage.File.csproj", "{255FEC78-A2D0-4B3D-AD98-18B0E119A4A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CashFlower.WebApi", "CashFlower.WebApi\CashFlower.WebApi.csproj", "{66AF301E-9134-4F01-87A6-0BDFEAA4903D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CashFlower.WebApi.Tests", "CashFlower.WebApi.Tests\CashFlower.WebApi.Tests.csproj", "{22E9E73D-A4B6-41D2-8F59-80FAFD28DA51}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -143,6 +149,30 @@ Global
 		{255FEC78-A2D0-4B3D-AD98-18B0E119A4A4}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{255FEC78-A2D0-4B3D-AD98-18B0E119A4A4}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{255FEC78-A2D0-4B3D-AD98-18B0E119A4A4}.Release|x86.ActiveCfg = Release|Any CPU
+		{66AF301E-9134-4F01-87A6-0BDFEAA4903D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66AF301E-9134-4F01-87A6-0BDFEAA4903D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66AF301E-9134-4F01-87A6-0BDFEAA4903D}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{66AF301E-9134-4F01-87A6-0BDFEAA4903D}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{66AF301E-9134-4F01-87A6-0BDFEAA4903D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{66AF301E-9134-4F01-87A6-0BDFEAA4903D}.Debug|x86.Build.0 = Debug|Any CPU
+		{66AF301E-9134-4F01-87A6-0BDFEAA4903D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66AF301E-9134-4F01-87A6-0BDFEAA4903D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66AF301E-9134-4F01-87A6-0BDFEAA4903D}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{66AF301E-9134-4F01-87A6-0BDFEAA4903D}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{66AF301E-9134-4F01-87A6-0BDFEAA4903D}.Release|x86.ActiveCfg = Release|Any CPU
+		{66AF301E-9134-4F01-87A6-0BDFEAA4903D}.Release|x86.Build.0 = Release|Any CPU
+		{22E9E73D-A4B6-41D2-8F59-80FAFD28DA51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22E9E73D-A4B6-41D2-8F59-80FAFD28DA51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22E9E73D-A4B6-41D2-8F59-80FAFD28DA51}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{22E9E73D-A4B6-41D2-8F59-80FAFD28DA51}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{22E9E73D-A4B6-41D2-8F59-80FAFD28DA51}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{22E9E73D-A4B6-41D2-8F59-80FAFD28DA51}.Debug|x86.Build.0 = Debug|Any CPU
+		{22E9E73D-A4B6-41D2-8F59-80FAFD28DA51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22E9E73D-A4B6-41D2-8F59-80FAFD28DA51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22E9E73D-A4B6-41D2-8F59-80FAFD28DA51}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{22E9E73D-A4B6-41D2-8F59-80FAFD28DA51}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{22E9E73D-A4B6-41D2-8F59-80FAFD28DA51}.Release|x86.ActiveCfg = Release|Any CPU
+		{22E9E73D-A4B6-41D2-8F59-80FAFD28DA51}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfBankTransfer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <BankTransfer>
+    <Account>
+      <AccountNumber>Qwert1234</AccountNumber>
+      <Iban>Bla Bla Bla</Iban>
+      <Description>My Account</Description>
+    </Account>
+    <ContraAccount>
+      <AccountNumber>Qwerty234</AccountNumber>
+      <Iban>Yada yada yada</Iban>
+      <Description>The other party's account</Description>
+    </ContraAccount>
+    <TransactionDate>2017-04-29T18:16:47.7495607+02:00</TransactionDate>
+    <InterestDate>2017-04-29T00:00:00+02:00</InterestDate>
+    <Amount>323</Amount>
+    <InitialBalance>1000</InitialBalance>
+    <FinalBalance>1323</FinalBalance>
+  </BankTransfer>
+</ArrayOfBankTransfer>
