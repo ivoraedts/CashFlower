@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{D9525F84-B6D9-4F56-B64F-22EC1FF5C6B7}</ProjectGuid>
+    <ProjectGuid>{255FEC78-A2D0-4B3D-AD98-18B0E119A4A4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CashFlower.Contracts</RootNamespace>
-    <AssemblyName>CashFlower.Contracts</AssemblyName>
+    <RootNamespace>CashFlower.BankTransferStorage.File</RootNamespace>
+    <AssemblyName>CashFlower.BankTransferStorage.File</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,15 +40,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Account.cs" />
-    <Compile Include="BankTransfer.cs" />
-    <Compile Include="BankTransferExtension.cs" />
-    <Compile Include="BankTransferLine.cs" />
-    <Compile Include="DistributionType.cs" />
-    <Compile Include="IBankTransferReader.cs" />
-    <Compile Include="IExistingBankTransferDeterminator.cs" />
-    <Compile Include="IStoreBankTransfers.cs" />
+    <Compile Include="BankTransferFileStore.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CashFlower.Contracts\CashFlower.Contracts.csproj">
+      <Project>{D9525F84-B6D9-4F56-B64F-22EC1FF5C6B7}</Project>
+      <Name>CashFlower.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CashFlower.Framework\CashFlower.Framework.csproj">
+      <Project>{B63E3103-0536-493C-962F-18DD98B6158E}</Project>
+      <Name>CashFlower.Framework</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

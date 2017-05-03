@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0058277C-CAFD-45B2-BAAD-5FFB881F6233}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CashFlower.BankTransferStorage.File.Test</RootNamespace>
+    <AssemblyName>CashFlower.BankTransferStorage.File.Test</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="nunit.framework, Version=2.5.10.11092, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Imports\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BankTransferFileStoreTests.cs" />
+    <Compile Include="BankTransferFileStoreWithTestExtension.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CashFlower.BankTransferStorage.File\CashFlower.BankTransferStorage.File.csproj">
+      <Project>{255FEC78-A2D0-4B3D-AD98-18B0E119A4A4}</Project>
+      <Name>CashFlower.BankTransferStorage.File</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CashFlower.Contracts\CashFlower.Contracts.csproj">
+      <Project>{D9525F84-B6D9-4F56-B64F-22EC1FF5C6B7}</Project>
+      <Name>CashFlower.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CashFlower.Framework.Tests\CashFlower.Framework.Tests.csproj">
+      <Project>{7C586797-2DDA-4470-9F01-E8F3B7349C51}</Project>
+      <Name>CashFlower.Framework.Tests</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CashFlower.Framework\CashFlower.Framework.csproj">
+      <Project>{B63E3103-0536-493C-962F-18DD98B6158E}</Project>
+      <Name>CashFlower.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CashFlower.Test.Shared\CashFlower.Test.Shared.csproj">
+      <Project>{A1420FDC-47C6-41C7-9B70-DE08B4717A41}</Project>
+      <Name>CashFlower.Test.Shared</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Recources\EmptyXmlFile.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Recources\TargetXmlFile.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Recources\XmlFileWithOneBanktransfer.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
