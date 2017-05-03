@@ -18,7 +18,7 @@ namespace CashFlower.BankTransferReader.AbnAmro.Tab.Tests.Tests
         [Test]
         public void GivenEmptyFile_EmptyListIsReturned()
         {
-            var filename = Path.Combine(TestContext.CurrentContext.TestDirectory, @"Recources\EmptyFile.tab");
+            var filename = Path.Combine(TestContext.CurrentContext.TestDirectory, @"Resources\EmptyFile.tab");
             var result = new AbnAmroTabReader(filename).GetBankTransfers();
             Assert.IsEmpty(result);
         }
@@ -26,7 +26,7 @@ namespace CashFlower.BankTransferReader.AbnAmro.Tab.Tests.Tests
         [Test]
         public void GivenLineWithPaymentFromPointOfSaleTerminal_BanktransferLineIsReturned()
         {
-            var filename = Path.Combine(TestContext.CurrentContext.TestDirectory, @"Recources\ExampleLine_BoughtStuffAtSupermarket.TAB");
+            var filename = Path.Combine(TestContext.CurrentContext.TestDirectory, @"Resources\ExampleLine_BoughtStuffAtSupermarket.TAB");
             var result = new AbnAmroTabReader(filename).GetBankTransfers();
             Assert.AreEqual(1, result.Count);
 
@@ -43,7 +43,7 @@ namespace CashFlower.BankTransferReader.AbnAmro.Tab.Tests.Tests
         [Test]
         public void GivenLineWithCashWithdrawalDetails_BanktransferLineIsReturned()
         {
-            var filename = Path.Combine(TestContext.CurrentContext.TestDirectory, @"Recources\ExampleLine_CashWithdrawal.TAB");
+            var filename = Path.Combine(TestContext.CurrentContext.TestDirectory, @"Resources\ExampleLine_CashWithdrawal.TAB");
             var result = new AbnAmroTabReader(filename).GetBankTransfers();
             Assert.AreEqual(1, result.Count);
 
@@ -60,7 +60,7 @@ namespace CashFlower.BankTransferReader.AbnAmro.Tab.Tests.Tests
         [Test]
         public void GivenLineWithSepaPayment_MonthlyBillForMobile_ExpectedBanktransferLineIsReturned()
         {
-            var filename = Path.Combine(TestContext.CurrentContext.TestDirectory, @"Recources\ExampleLine_MonthlyBillForMobile.TAB");
+            var filename = Path.Combine(TestContext.CurrentContext.TestDirectory, @"Resources\ExampleLine_MonthlyBillForMobile.TAB");
             var result = new AbnAmroTabReader(filename).GetBankTransfers();
             Assert.AreEqual(1, result.Count);
 
@@ -78,7 +78,7 @@ namespace CashFlower.BankTransferReader.AbnAmro.Tab.Tests.Tests
         [Test]
         public void GivenLineWithSepaPayment_PaidJohnDoe_ExpectedBanktransferLineIsReturned()
         {
-            var filename = Path.Combine(TestContext.CurrentContext.TestDirectory, @"Recources\ExampleLine_PayedMoneyToJohnDoe.TAB");
+            var filename = Path.Combine(TestContext.CurrentContext.TestDirectory, @"Resources\ExampleLine_PayedMoneyToJohnDoe.TAB");
             var result = new AbnAmroTabReader(filename).GetBankTransfers();
             Assert.AreEqual(1, result.Count);
 
@@ -96,7 +96,7 @@ namespace CashFlower.BankTransferReader.AbnAmro.Tab.Tests.Tests
         [Test]
         public void GivenLineWithSepaPayment_ReceivedFromJohnDoe_ExpectedBanktransferLineIsReturned()
         {
-            var filename = Path.Combine(TestContext.CurrentContext.TestDirectory, @"Recources\ExampleLine_ReceivedMoneyFromJohnDoe.TAB");
+            var filename = Path.Combine(TestContext.CurrentContext.TestDirectory, @"Resources\ExampleLine_ReceivedMoneyFromJohnDoe.TAB");
             var result = new AbnAmroTabReader(filename).GetBankTransfers();
             Assert.AreEqual(1, result.Count);
 
@@ -114,7 +114,7 @@ namespace CashFlower.BankTransferReader.AbnAmro.Tab.Tests.Tests
         [Test]
         public void GivenLineWithSepaPayment_ReceivedSalary_ExpectedBanktransferLineIsReturned()
         {
-            var filename = Path.Combine(TestContext.CurrentContext.TestDirectory, @"Recources\ExampleLine_ReceivedSalary.TAB");
+            var filename = Path.Combine(TestContext.CurrentContext.TestDirectory, @"Resources\ExampleLine_ReceivedSalary.TAB");
             var result = new AbnAmroTabReader(filename).GetBankTransfers();
             Assert.AreEqual(1, result.Count);
 
@@ -132,7 +132,7 @@ namespace CashFlower.BankTransferReader.AbnAmro.Tab.Tests.Tests
         [Test]
         public void GivenFileWithManyLines_ManyBankTransferLinesAreReturned()
         {
-            var filename = Path.Combine(TestContext.CurrentContext.TestDirectory, @"Recources\ModifiedExample.TAB");
+            var filename = Path.Combine(TestContext.CurrentContext.TestDirectory, @"Resources\ModifiedExample.TAB");
             var result = new AbnAmroTabReader(filename).GetBankTransfers();
             Assert.AreEqual(39, result.Count);
             Assert.AreEqual(39, result.Where(line => line.AccountNumber == "480226345").ToList().Count);

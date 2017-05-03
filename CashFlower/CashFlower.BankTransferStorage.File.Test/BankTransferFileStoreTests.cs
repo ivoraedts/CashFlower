@@ -13,7 +13,7 @@ namespace CashFlower.BankTransferStorage.File.Test
         [Test]
         public void CleanStore_SaveStoreCreatesFileWithoutBanktransfers()
         {
-            var filename = Path.Combine(TestContext.CurrentContext.TestDirectory, @"Recources\TargetXmlFile.xml");
+            var filename = Path.Combine(TestContext.CurrentContext.TestDirectory, @"Resources\TargetXmlFile.xml");
             _deleteFile(filename);
 
             var store = new BankTransferFileStore();
@@ -29,7 +29,7 @@ namespace CashFlower.BankTransferStorage.File.Test
         {
             const string testAccountNumber = "Qwert1234";
             const string testContraAccountNumber = "Qwerty234";
-            var filename = Path.Combine(TestContext.CurrentContext.TestDirectory, @"Recources\TargetXmlFile.xml");
+            var filename = Path.Combine(TestContext.CurrentContext.TestDirectory, @"Resources\TargetXmlFile.xml");
             _clearFile(filename);
 
             var store = new BankTransferFileStoreWithTestExtension();
@@ -103,7 +103,7 @@ namespace CashFlower.BankTransferStorage.File.Test
         [Test]
         public void GivenEmtyFile_OpenImportsEmtyList()
         {
-            var filename = Path.Combine(TestContext.CurrentContext.TestDirectory, @"Recources\EmptyXmlFile.xml");
+            var filename = Path.Combine(TestContext.CurrentContext.TestDirectory, @"Resources\EmptyXmlFile.xml");
             var store = new BankTransferFileStore();
 
             store.OpenFrom(filename);
@@ -115,7 +115,7 @@ namespace CashFlower.BankTransferStorage.File.Test
         [Test]
         public void GivenFileWithOneBanktransfer_OpenImportsBanktransfer()
         {
-            var filename = Path.Combine(TestContext.CurrentContext.TestDirectory, @"Recources\XmlFileWithOneBanktransfer.xml");
+            var filename = Path.Combine(TestContext.CurrentContext.TestDirectory, @"Resources\XmlFileWithOneBanktransfer.xml");
             var store = new BankTransferFileStore();
 
             store.OpenFrom(filename);

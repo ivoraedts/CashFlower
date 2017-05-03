@@ -56,7 +56,7 @@
     <Compile Include="Tests\AbnAmroTabReaderTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Recources\ExampleLine_BoughtStuffAtSupermarket.TAB">
+    <Content Include="Resources\ExampleLine_BoughtStuffAtSupermarket.TAB">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
@@ -83,29 +83,29 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Recources\EmptyFile.tab">
+    <Content Include="Resources\EmptyFile.tab">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Recources\ExampleLine_CashWithdrawal.TAB">
+    <Content Include="Resources\ExampleLine_CashWithdrawal.TAB">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Recources\ExampleLine_MonthlyBillForMobile.TAB">
+    <Content Include="Resources\ExampleLine_MonthlyBillForMobile.TAB">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Recources\ExampleLine_PayedMoneyToJohnDoe.TAB">
+    <Content Include="Resources\ExampleLine_PayedMoneyToJohnDoe.TAB">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Recources\ExampleLine_ReceivedMoneyFromJohnDoe.TAB">
+    <Content Include="Resources\ExampleLine_ReceivedMoneyFromJohnDoe.TAB">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Recources\ExampleLine_ReceivedSalary.TAB">
+    <Content Include="Resources\ExampleLine_ReceivedSalary.TAB">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Recources\ModifiedExample.TAB">
+    <Content Include="Resources\ModifiedExample.TAB">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
