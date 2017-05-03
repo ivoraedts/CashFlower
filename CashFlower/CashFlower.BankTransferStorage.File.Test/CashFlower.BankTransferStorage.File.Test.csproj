@@ -72,13 +72,13 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="Recources\EmptyXmlFile.xml">
+    <Content Include="Resources\EmptyXmlFile.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Recources\TargetXmlFile.xml">
+    <Content Include="Resources\TargetXmlFile.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Recources\XmlFileWithOneBanktransfer.xml">
+    <Content Include="Resources\XmlFileWithOneBanktransfer.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
