@@ -41,6 +41,7 @@ namespace CashFlower.BankTransferStorage.File.Test
             Assert.IsTrue(storedFileAsString.Contains(testAccountNumber));
             Assert.IsTrue(storedFileAsString.Contains(testContraAccountNumber));
             Assert.IsTrue(storedFileAsString.Contains("Month"));
+            Assert.IsTrue(storedFileAsString.Contains("Guid"));
         }
 
         private static void _deleteFile(string fileName)
@@ -72,12 +73,14 @@ namespace CashFlower.BankTransferStorage.File.Test
                         Account = new Account {
                             AccountNumber = testAccountNumber,
                             Description = "My Account",
-                            Iban = "Bla Bla Bla"
+                            Iban = "Bla Bla Bla",
+                            Id = "FakeGuidOfFirstAccount"
                         },
                         ContraAccount = new Account {
                             AccountNumber = testContraAccountNumber,
                             Iban = "Yada yada yada",
-                            Description = "The other party's account"
+                            Description = "The other party's account",
+                            Id = "FakeGuidOfSecondAccount"
                         },
                         Amount = 323,
                         InterestDate = DateTime.Today,
@@ -88,7 +91,8 @@ namespace CashFlower.BankTransferStorage.File.Test
                             DistributionType = DistributionType.Month,
                             CalculationDate = DateTime.Today.AddDays(-7),
                             HideFromCalculations = false
-                        }
+                        },
+                        Id = "FakeGUID"
                     }
                 });
         }
@@ -322,14 +326,20 @@ namespace CashFlower.BankTransferStorage.File.Test
             Assert.AreEqual(1, store.GetAll().Count);
             var banktransfer = store.GetAll().Single();
             Assert.AreEqual("12345", banktransfer.Account.AccountNumber);
+            Assert.IsNotNull(banktransfer.Account.Id);
+            Assert.AreEqual(36, banktransfer.Account.Id.Length);
             Assert.AreEqual("67890", banktransfer.ContraAccount.AccountNumber);
             Assert.AreEqual("Hallo 1234", banktransfer.ContraAccount.Description);
             Assert.AreEqual("IBAN293473", banktransfer.ContraAccount.Iban);
+            Assert.IsNotNull(banktransfer.ContraAccount.Id);
+            Assert.AreEqual(36, banktransfer.ContraAccount.Id.Length);
             Assert.AreEqual(10, banktransfer.Amount);
             Assert.AreEqual(20, banktransfer.InitialBalance);
             Assert.AreEqual(30, banktransfer.FinalBalance);
             Assert.AreEqual(DateTime.Today, banktransfer.TransactionDate);
             Assert.AreEqual(DateTime.Today.AddDays(-1), banktransfer.InterestDate);
+            Assert.IsNotNull(banktransfer.Id);
+            Assert.AreEqual(36, banktransfer.Id.Length);
         }
 
         [Test]
@@ -372,6 +382,17 @@ namespace CashFlower.BankTransferStorage.File.Test
             var contraAccountOfFirstBankTransaction = store.GetAll().First().ContraAccount;
             var contraAccountOfSecondBankTransaction = store.GetAll().Last().ContraAccount;
             Assert.AreEqual(contraAccountOfFirstBankTransaction, contraAccountOfSecondBankTransaction);
+        }
+
+        [Test]
+        public void WhenStoringTwoBankTransfers_GuidsAreDifferent()
+        {
+            var store = new BankTransferFileStore();
+            store.Store(new BankTransferLine());
+            store.Store(new BankTransferLine());
+            var banktransfers = store.GetAll();
+            Assert.AreEqual(2, banktransfers.Count);
+            Assert.AreNotEqual(banktransfers.First().Id, banktransfers.Last().Id);
         }
     }
 }

@@ -12,6 +12,6 @@ namespace CashFlower.Contracts
         public decimal Amount { get; set; }
         public decimal InitialBalance { get; set; }
         public decimal FinalBalance { get; set; }
-
+        public string Id { get; set; }
     }
 }

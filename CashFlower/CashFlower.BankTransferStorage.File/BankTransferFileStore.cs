@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Xml.Serialization;
@@ -72,7 +73,8 @@ namespace CashFlower.BankTransferStorage.File
                 TransactionDate = line.TransactionDate,
                 InitialBalance = line.InitialBalance,
                 FinalBalance = line.FinalBalance,
-                Amount = line.Amount
+                Amount = line.Amount,
+                Id = Guid.NewGuid().ToString()
             });
         }
 
@@ -83,7 +85,7 @@ namespace CashFlower.BankTransferStorage.File
 
             var account = (bankTransferWithSameAccount != null)
                 ? bankTransferWithSameAccount.Account
-                : new Account { AccountNumber = line.AccountNumber };
+                : new Account { AccountNumber = line.AccountNumber, Id = Guid.NewGuid().ToString() };
             return account;
         }
 
@@ -100,7 +102,8 @@ namespace CashFlower.BankTransferStorage.File
                 : new Account {
                     AccountNumber = line.ContraAccountNumber,
                     Description = line.ContraAccountDescription,
-                    Iban = line.ContraAccountIban
+                    Iban = line.ContraAccountIban,
+                    Id = Guid.NewGuid().ToString()
                 };
             return contraAccount;
         }
