@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using CashFlower.Contracts;
 using NUnit.Framework;
+using CashFlower.Test.Shared;
 
 namespace CashFlower.BankTransferStorage.File.Test
 {
@@ -14,11 +15,11 @@ namespace CashFlower.BankTransferStorage.File.Test
         public void CleanStore_SaveStoreCreatesFileWithoutBanktransfers()
         {
             var filename = Path.Combine(TestContext.CurrentContext.TestDirectory, @"Resources\TargetXmlFile.xml");
-            _deleteFile(filename);
+            FileHelper.DeleteFile(filename);
 
             var store = new BankTransferFileStore();
             store.SaveAs(filename);
-            var storedFileAsString = _readFileString(filename);
+            var storedFileAsString = FileHelper.ReadFileString(filename);
             Assert.IsTrue(storedFileAsString.Contains("xml"));
             Assert.IsTrue(storedFileAsString.Contains("ArrayOfBankTransfer"));
             Assert.IsFalse(storedFileAsString.Contains("<BankTransfer"));
@@ -30,13 +31,13 @@ namespace CashFlower.BankTransferStorage.File.Test
             const string testAccountNumber = "Qwert1234";
             const string testContraAccountNumber = "Qwerty234";
             var filename = Path.Combine(TestContext.CurrentContext.TestDirectory, @"Resources\TargetXmlFile.xml");
-            _clearFile(filename);
+            FileHelper.ClearFile(filename);
 
             var store = new BankTransferFileStoreWithTestExtension();
             _setTestStorage(store, testAccountNumber, testContraAccountNumber);
 
             store.SaveAs(filename);
-            var storedFileAsString = _readFileString(filename);
+            var storedFileAsString = FileHelper.ReadFileString(filename);
             Assert.IsTrue(storedFileAsString.Contains("<BankTransfer"));
             Assert.IsTrue(storedFileAsString.Contains(testAccountNumber));
             Assert.IsTrue(storedFileAsString.Contains(testContraAccountNumber));
@@ -44,25 +45,7 @@ namespace CashFlower.BankTransferStorage.File.Test
             Assert.IsTrue(storedFileAsString.Contains("Guid"));
         }
 
-        private static void _deleteFile(string fileName)
-        {
-            System.IO.File.Delete(fileName);
-        }
 
-        private static void _clearFile(string fileName)
-        {
-            var writer = new StreamWriter(fileName, false);
-            writer.Write("");
-            writer.Close();
-        }
-
-        private static string _readFileString(string fileName)
-        {
-            var reader = new StreamReader(fileName);
-            var result = reader.ReadToEnd();
-            reader.Close();
-            return result;
-        }
 
         private static void _setTestStorage(
             BankTransferFileStoreWithTestExtension store, string testAccountNumber, string testContraAccountNumber)
@@ -130,6 +113,29 @@ namespace CashFlower.BankTransferStorage.File.Test
             Assert.AreEqual("Qwert1234", bankTransfers.Single().Account.AccountNumber);
             Assert.AreEqual("The other party's account", bankTransfers.Single().ContraAccount.Description);
             Assert.AreEqual(new DateTime(2017, 5, 4), bankTransfers.Single().TransactionDate.Date );
+        }
+
+        [Test]
+        [ExpectedException(typeof(MissingFieldException))]
+        public void UnopenedStore_SaveThrowsException()
+        {
+            new BankTransferFileStore().Save();
+        }
+
+        [Test]
+        public void OpenedStore_SaveUpdatesFile()
+        {
+            var filename = Path.Combine(TestContext.CurrentContext.TestDirectory, @"Resources\TargetXmlFile.xml");
+
+            var store = new BankTransferFileStore();
+            store.SaveAs(filename);
+            store.OpenFrom(filename);
+            var strangeAccountNumber = Guid.NewGuid().ToString();
+            store.Store(new BankTransferLine { AccountNumber = strangeAccountNumber });
+            store.Save();
+
+            var storedFileAsString = FileHelper.ReadFileString(filename);
+            Assert.IsTrue(storedFileAsString.Contains(strangeAccountNumber));
         }
 
         [Test]
