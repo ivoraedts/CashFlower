@@ -61,6 +61,10 @@
       <Project>{D9525F84-B6D9-4F56-B64F-22EC1FF5C6B7}</Project>
       <Name>CashFlower.Contracts</Name>
     </ProjectReference>
+    <ProjectReference Include="..\CashFlower.Test.Shared\CashFlower.Test.Shared.csproj">
+      <Project>{A1420FDC-47C6-41C7-9B70-DE08B4717A41}</Project>
+      <Name>CashFlower.Test.Shared</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CashFlower.WebApi\CashFlower.WebApi.csproj">
       <Project>{66AF301E-9134-4F01-87A6-0BDFEAA4903D}</Project>
       <Name>CashFlower.WebApi</Name>

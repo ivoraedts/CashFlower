@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
+using System.Linq;
 using System.Web.Hosting;
 using System.Web.Http;
 
@@ -33,20 +34,15 @@ namespace CashFlower.WebApi.Controllers
             return _filestorage.GetAll().ToArray();
         }
 
-        /*
         // GET: api/BankTransfer/5
-        public BankTransfer Get(int id)
+        // Access with: http://localhost:50813/api/BankTransfer/FakeGUID
+        public BankTransfer Get(string id)
         {
-            return new BankTransfer
-            {
-                Account = new Account
-                {
-                    AccountNumber = "Just testing around"
-                }
-            };
+            var transfer = _filestorage.GetAll().FirstOrDefault(t => t.Id == id);
+            if (transfer == null)
+                throw new KeyNotFoundException("Cannot find BankTransfer with Id:" + id);
+            return transfer;
         }
-        I first need an ID for this
-        */
 
         // POST: api/BankTransfer
         public void Post([FromBody]BankTransfer value)
@@ -54,13 +50,15 @@ namespace CashFlower.WebApi.Controllers
             throw new NotImplementedException("Posting new BankTransfer objects is not supported by this API.");
         }
 
-        /*
         // PUT: api/BankTransfer/5
-        public void Put(int id, [FromBody]string value)
+        public void Put([FromBody]BankTransfer value)
         {
+            var transfer = _filestorage.GetAll().FirstOrDefault(t => t.Id == value.Id);
+            if (transfer == null)
+                throw new KeyNotFoundException("Cannot find BankTransfer with Id:" + value.Id);
+            transfer.Extension = value.Extension;
+            _filestorage.Save();
         }
-        I first need an ID for this
-            */
 
         // DELETE: api/BankTransfer/5
         public void Delete(string guid)

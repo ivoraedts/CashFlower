@@ -5,16 +5,24 @@
       <AccountNumber>Qwert1234</AccountNumber>
       <Iban>Bla Bla Bla</Iban>
       <Description>My Account</Description>
+      <Id>FakeGuidOfFirstAccount</Id>
     </Account>
     <ContraAccount>
       <AccountNumber>Qwerty234</AccountNumber>
       <Iban>Yada yada yada</Iban>
       <Description>The other party's account</Description>
+      <Id>FakeGuidOfSecondAccount</Id>
     </ContraAccount>
-    <TransactionDate>2017-04-29T18:16:47.7495607+02:00</TransactionDate>
-    <InterestDate>2017-04-29T00:00:00+02:00</InterestDate>
+    <Extension>
+      <CalculationDate>2017-04-27T00:00:00+02:00</CalculationDate>
+      <HideFromCalculations>false</HideFromCalculations>
+      <DistributionType>Month</DistributionType>
+    </Extension>
+    <TransactionDate>2017-05-04T10:54:36.9506786+02:00</TransactionDate>
+    <InterestDate>2017-05-04T00:00:00+02:00</InterestDate>
     <Amount>323</Amount>
     <InitialBalance>1000</InitialBalance>
     <FinalBalance>1323</FinalBalance>
+    <Id>FakeGUID</Id>
   </BankTransfer>
 </ArrayOfBankTransfer>

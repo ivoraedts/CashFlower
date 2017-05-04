@@ -1,2 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ArrayOfBankTransfer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+<ArrayOfBankTransfer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <BankTransfer>
+    <Account>
+      <AccountNumber>Qwert1234</AccountNumber>
+      <Iban>Bla Bla Bla</Iban>
+      <Description>My Account</Description>
+      <Id>FakeGuidOfFirstAccount</Id>
+    </Account>
+    <ContraAccount>
+      <AccountNumber>Qwerty234</AccountNumber>
+      <Iban>Yada yada yada</Iban>
+      <Description>The other party's account</Description>
+      <Id>FakeGuidOfSecondAccount</Id>
+    </ContraAccount>
+    <Extension>
+      <CalculationDate>2017-04-27T00:00:00+02:00</CalculationDate>
+      <HideFromCalculations>false</HideFromCalculations>
+      <DistributionType>Month</DistributionType>
+    </Extension>
+    <TransactionDate>2017-05-04T10:54:36.9506786+02:00</TransactionDate>
+    <InterestDate>2017-05-04T00:00:00+02:00</InterestDate>
+    <Amount>323</Amount>
+    <InitialBalance>1000</InitialBalance>
+    <FinalBalance>1323</FinalBalance>
+    <Id>FakeGUID</Id>
+  </BankTransfer>
+</ArrayOfBankTransfer>
