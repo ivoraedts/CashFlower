@@ -9,15 +9,23 @@ namespace CashFlower.BankTransferStorage.File
 {
     public class BankTransferFileStore : IExistingBankTransferDeterminator, IStoreBankTransfers
     {
-        protected List<BankTransfer> _storage = new List<BankTransfer>(); 
+        protected List<BankTransfer> _storage = new List<BankTransfer>();
+        private string _filename;
 
         public void OpenFrom(string filename)
         {
+            _filename = filename;
             using (var stream = System.IO.File.OpenRead(filename))
             {
                 var serializer = new XmlSerializer(_storage.GetType());
                 _storage = serializer.Deserialize(stream) as List<BankTransfer>;
             }
+        }
+
+        public void Save()
+        {
+            if (_filename == null) throw new MissingFieldException("Cannot invoke Save() before invoking OpenFrom(string filename).");
+            SaveAs(_filename);
         }
 
         public void SaveAs(string filename)
