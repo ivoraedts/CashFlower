@@ -129,8 +129,7 @@ namespace CashFlower.BankTransferStorage.File.Test
             Assert.AreEqual(1, bankTransfers.Count);
             Assert.AreEqual("Qwert1234", bankTransfers.Single().Account.AccountNumber);
             Assert.AreEqual("The other party's account", bankTransfers.Single().ContraAccount.Description);
-            Assert.AreEqual(new DateTime(2017, 4, 29), bankTransfers.Single().TransactionDate.Date );
-            Assert.IsNull(bankTransfers.Single().Extension);
+            Assert.AreEqual(new DateTime(2017, 5, 4), bankTransfers.Single().TransactionDate.Date );
         }
 
         [Test]
