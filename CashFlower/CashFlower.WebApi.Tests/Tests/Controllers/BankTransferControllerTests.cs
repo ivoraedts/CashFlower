@@ -68,7 +68,9 @@ namespace CashFlower.WebApi.Tests.Tests.Controllers
         [Test]
         public void GetPutExistingId_UpdatesOnlyExtensionOfExistingBankTransfer()
         {
-            var filename = Path.Combine(TestContext.CurrentContext.TestDirectory, @"Resources\XmlFileWithOneBanktransfer.xml");
+            var sourceFileName = Path.Combine(TestContext.CurrentContext.TestDirectory, @"Resources\XmlFileWithOneBanktransfer.xml");
+            var filename = Path.Combine(TestContext.CurrentContext.TestDirectory, @"Resources\TargetXmlFile.xml");
+            File.Copy(sourceFileName, filename, true);
             ConfigurationManager.AppSettings["storagefilename"] = filename;
             _ctr = new BankTransferController();
             _ctr.Put(new BankTransfer
@@ -96,7 +98,9 @@ namespace CashFlower.WebApi.Tests.Tests.Controllers
         [Test]
         public void GetPutExistingId_UpdatesIsStored()
         {
-            var filename = Path.Combine(TestContext.CurrentContext.TestDirectory, @"Resources\XmlFileWithOneBanktransfer.xml");
+            var sourceFileName = Path.Combine(TestContext.CurrentContext.TestDirectory, @"Resources\XmlFileWithOneBanktransfer.xml");
+            var filename = Path.Combine(TestContext.CurrentContext.TestDirectory, @"Resources\TargetXmlFile.xml");
+            File.Copy(sourceFileName, filename, true);
             ConfigurationManager.AppSettings["storagefilename"] = filename;
             _ctr = new BankTransferController();
             _ctr.Put(new BankTransfer

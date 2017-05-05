@@ -89,9 +89,12 @@
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\BankTransferController.cs" />
+    <Compile Include="Controllers\CashFlowerControllerBase.cs" />
+    <Compile Include="Controllers\PeriodicFigureController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\PeriodicFigure.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -103,9 +106,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\CashFlower.BankTransferStorage.File\CashFlower.BankTransferStorage.File.csproj">
       <Project>{255FEC78-A2D0-4B3D-AD98-18B0E119A4A4}</Project>
