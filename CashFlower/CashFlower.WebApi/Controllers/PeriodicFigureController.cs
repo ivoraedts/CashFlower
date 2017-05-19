@@ -1,5 +1,5 @@
 ﻿using CashFlower.Contracts;
-using CashFlower.WebApi.Models;
+using CashFlower.Contracts.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -91,26 +91,15 @@ namespace CashFlower.WebApi.Controllers
 
         private List<BankTransfer> _filterByYear(List<BankTransfer> all, int year)
         {
-            return all.Where(b => 
-                ((b.Extension == null || b.Extension.CalculationDate == null) && b.TransactionDate.Year==year) ||
-                (b.Extension != null && b.Extension.CalculationDate != null && b.Extension.CalculationDate.Year == year)).ToList();
+            return all.Where(b => b.GetDate().Year==year).ToList();
         }
 
         private List<BankTransfer> _filterByYearAndMonth(List<BankTransfer> all, int year, int month)
         {
             return all.Where(b =>
-                (
-                    (b.Extension == null || b.Extension.CalculationDate == null) 
-                    && b.TransactionDate.Year == year 
-                    && (
-                            (b.Extension != null && b.Extension.DistributionType == DistributionType.Year) 
-                            || b.TransactionDate.Month == month)) 
-                ||
-                    (b.Extension != null 
-                    && b.Extension.CalculationDate != null 
-                    && b.Extension.CalculationDate.Year == year 
-                    && ((b.Extension != null && b.Extension.DistributionType == DistributionType.Year)
-                            || b.Extension.CalculationDate.Month == month))).ToList();
+                ( b.GetDate().Year==year && b.GetDistributionType() == DistributionType.Year) 
+                || ( b.GetDate().Year==year && b.GetDate().Month==month)
+                ).ToList();
         }
 
     }

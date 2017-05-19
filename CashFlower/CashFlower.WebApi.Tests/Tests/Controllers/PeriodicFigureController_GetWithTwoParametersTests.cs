@@ -1,23 +1,15 @@
 ﻿using CashFlower.Contracts;
 using CashFlower.WebApi.Controllers;
+using CashFlower.WebApi.Tests.Helpers;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
-using System.Configuration;
-using System.IO;
 
 namespace CashFlower.WebApi.Tests.Tests.Controllers
 {
     [TestFixture]
-    public class PeriodicFigureController_GetWithTwoParametersTests
+    public class PeriodicFigureController_GetWithTwoParametersTests : ControllerTestBase
     {
-        [SetUp]
-        public void SetUp()
-        {
-            var filename = Path.Combine(TestContext.CurrentContext.TestDirectory, @"Resources\EmptyXmlFile.xml");
-            ConfigurationManager.AppSettings["storagefilename"] = filename;
-        }
-
         [TestCase(1916,2)]
         [TestCase(2916,2)]
         [TestCase(2016, -2)]

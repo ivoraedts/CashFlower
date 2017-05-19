@@ -4,19 +4,13 @@ using System.Configuration;
 using System.IO;
 using System.Collections.Generic;
 using CashFlower.Contracts;
+using CashFlower.WebApi.Tests.Helpers;
 
 namespace CashFlower.WebApi.Tests.Tests.Controllers
 {
     [TestFixture]
-    public class PeriodicFigureController_GetWithoutParametersTests
+    public class PeriodicFigureController_GetWithoutParametersTests : ControllerTestBase
     {
-        [SetUp]
-        public void SetUp()
-        {
-            var filename = Path.Combine(TestContext.CurrentContext.TestDirectory, @"Resources\EmptyXmlFile.xml");
-            ConfigurationManager.AppSettings["storagefilename"] = filename;
-        }
-
         [Test]
         public void GivenNoBanktransfers_GetPeriodicFigureReturnsZeros()
         {

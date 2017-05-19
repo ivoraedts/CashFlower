@@ -7,19 +7,19 @@ using System.IO;
 using System.Configuration;
 using System.Collections.Generic;
 using CashFlower.Test.Shared;
+using CashFlower.WebApi.Tests.Helpers;
 
 namespace CashFlower.WebApi.Tests.Tests.Controllers
 {
     [TestFixture]
-    public class BankTransferControllerTests
+    public class BankTransferControllerTests : ControllerTestBase
     {
         private BankTransferController _ctr;
 
         [SetUp]
-        public void Setup()
+        public new void Setup()
         {
-            var filename = Path.Combine(TestContext.CurrentContext.TestDirectory, @"Resources\EmptyXmlFile.xml");
-            ConfigurationManager.AppSettings["storagefilename"] = filename;
+            base.Setup();
             _ctr = new BankTransferController();
         }
 
