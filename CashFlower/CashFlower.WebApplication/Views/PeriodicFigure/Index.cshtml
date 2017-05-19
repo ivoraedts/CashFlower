@@ -1,0 +1,30 @@
+﻿@model CashFlower.Contracts.PeriodicFigure
+
+@{
+    ViewBag.Title = "Home Page";
+    if (Model != null)
+    {
+        ViewBag.Title = "Expenses : " + Model.Expenses + "- Income :" + Model.Income;        
+    }
+}
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div>
+    Hallo<br />
+    Totale hoeveelheid aan uitgaven: @Model.Expenses <br />
+    Totale hoeveelheid aan inkomsten: @Model.Income <br />
+        Eerste periode: @ViewData["FirstPeriod"] <br />
+        Laatste periode:@ViewData["LastPeriod"] <br />
+    </div>
+</body>
+</html>
